@@ -28,7 +28,7 @@ Before installing the SDK, you will need to gather the appropriate credentials. 
 ## Installation
 
 ```
-npm install @homee/react-native-mapbox-navigation
+npm install @harshpatel2125/react-native-mapbox-navigation
 ```
 
 Read the iOS specific instructions below before running `pod install`.
@@ -235,49 +235,49 @@ For more information you can read the [docs provided by Mapbox](https://docs.map
 ## Usage
 
 ```jsx
-import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import MapboxNavigation from '@homee/react-native-mapbox-navigation';
+import * as React from "react";
+import { StyleSheet, View } from "react-native";
+import MapboxNavigation from "@homee/react-native-mapbox-navigation";
 
 export const SomeComponent = () => {
-  return (
-    <View style={styles.container}>
-      <MapboxNavigation
-        origin={[-97.760288, 30.273566]}
-        destination={[-97.918842, 30.494466]}
-        shouldSimulateRoute
-        showsEndOfRouteFeedback
-        onLocationChange={(event) => {
-          const { latitude, longitude } = event.nativeEvent;
-        }}
-        onRouteProgressChange={(event) => {
-          const {
-            distanceTraveled,
-            durationRemaining,
-            fractionTraveled,
-            distanceRemaining,
-          } = event.nativeEvent;
-        }}
-        onError={(event) => {
-          const { message } = event.nativeEvent;
-        }}
-        onCancelNavigation={() => {
-          // User tapped the "X" cancel button in the nav UI
-          // or canceled via the OS system tray on android.
-          // Do whatever you need to here.
-        }}
-        onArrive={() => {
-          // Called when you arrive at the destination.
-        }}
-      />
-    </View>
-  );
+	return (
+		<View style={styles.container}>
+			<MapboxNavigation
+				origin={[-97.760288, 30.273566]}
+				destination={[-97.918842, 30.494466]}
+				shouldSimulateRoute
+				showsEndOfRouteFeedback
+				onLocationChange={(event) => {
+					const { latitude, longitude } = event.nativeEvent;
+				}}
+				onRouteProgressChange={(event) => {
+					const {
+						distanceTraveled,
+						durationRemaining,
+						fractionTraveled,
+						distanceRemaining,
+					} = event.nativeEvent;
+				}}
+				onError={(event) => {
+					const { message } = event.nativeEvent;
+				}}
+				onCancelNavigation={() => {
+					// User tapped the "X" cancel button in the nav UI
+					// or canceled via the OS system tray on android.
+					// Do whatever you need to here.
+				}}
+				onArrive={() => {
+					// Called when you arrive at the destination.
+				}}
+			/>
+		</View>
+	);
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+	container: {
+		flex: 1,
+	},
 });
 ```
 
